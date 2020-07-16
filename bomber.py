@@ -399,7 +399,7 @@ def smsBomber():
             global sh_err
             global proxy
             cc += 1
-            if cc <= len(services):
+            if cc >= len(services):
                 cc = 0
                 cprint('\nNew cycle, timeout 5sec\n', 'yellow')
                 time.sleep(5)

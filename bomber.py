@@ -1,7 +1,7 @@
 # imports
 try:
     from termcolor import colored, cprint
-    import requests, random
+    import requests, random, time
 except ImportError:
     print('\n' + ':/' + "\nError: Error: some dependencies are not installed!\nPrint 'pip install -r requirements.txt'")
     exit()

@@ -37,7 +37,7 @@ lv = colored('<3', 'red')
 vv = colored('@v533', 'magenta')
 aa = colored('Ar1na', 'magenta')
 print('Made with ' + lv + ' by ' + vv + "\n\nSpecial for " + aa)
-print('\nVersion: 0.6.1')
+print('\nVersion: 0.6.2')
 # functions
 email = '@mail.ru'
 for x in range(12):
@@ -478,7 +478,7 @@ def update():
 
 
 # loop
-txt = '\nSelect future >>\n' + colored('01', 'cyan') + colored(' - ', 'grey') + colored('SMS bomber', 'cyan') + "\n" + colored('02', 'yellow') + colored(' - ', 'grey') + colored('Email bomber', 'yellow') + "\n" + colored('03', 'green') + colored(' - ', 'grey') + colored('WhatsApp bomber', 'green') + "\n" + colored('00', 'magenta') + colored(' - ', 'grey') + colored('Update', 'magenta') + "\n" + colored('99', 'red') + colored(' - ', 'grey') + colored('Exit', 'red') + '\n\n'
+txt = '\nSelect feature >>\n' + colored('01', 'cyan') + colored(' - ', 'grey') + colored('SMS bomber', 'cyan') + "\n" + colored('02', 'yellow') + colored(' - ', 'grey') + colored('Email bomber', 'yellow') + "\n" + colored('03', 'green') + colored(' - ', 'grey') + colored('WhatsApp bomber', 'green') + "\n" + colored('00', 'magenta') + colored(' - ', 'grey') + colored('Update', 'magenta') + "\n" + colored('99', 'red') + colored(' - ', 'grey') + colored('Exit', 'red') + '\n\n'
 while True:
     inp = input(txt)
     if inp == '99':

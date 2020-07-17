@@ -7,7 +7,7 @@ services = [
             "l": "{cc}{target}"
         },
         "identifier": "200"
-    },
+    }, # RuTaxi +
 {
         "name": "MTS TV",
         "method": "POST",
@@ -16,28 +16,28 @@ services = [
             "msisdn": "{cc}{target}"
         },
         "identifier": "200"
-    },
+    }, # MTS TV +
 {
         "name": "MTS",
         "method": "POST",
         "url": 'https://api.mtstv.ru/v1/users',
         'json':{'msisdn': '{cc}{target}'},
         "identifier": "200"
-    },
+    }, # MTS +
 {
         "name": "Rutube",
         "method": "POST",
         "url": 'https://rutube.ru/api/accounts/sendpass/phone',
         'params': {'phone': '+{cc}{target}'},
         "identifier": "200"
-    },
+    }, # Rutube +
 {
         "name": "Twitch",
         "method": "POST",
         "url": "https://passport.twitch.tv/register?trusted_request=true",
         "json": {"Birthday": {"day": 11, "month": 11, "year": 1999},"client_id": "kd1unb4b3q4t58fwlpcbzcbnm76a8fp", "include_verification_code": True,"password": '98HYtybh_9756', "phone_number": '{cc}{target}',"username": 'Rthhe7654_utr'},
         "identifier": "200"
-    },
+    }, # Twitch +
     {
         "name": "qlean",
         "method": "POST",
@@ -46,7 +46,7 @@ services = [
             "phone": "{cc}{target}"
         },
         "identifier": "request_id"
-    },
+    }, # Qlean -
     {
         "name": "mail.ru",
         "method": "POST",
@@ -58,7 +58,7 @@ services = [
             "x-email": 'xxx{semail}'
         },
         "identifier": "200"
-    },
+    }, # Mail.ru +
     {
         "name": "youla.ru",
         "method": "POST",
@@ -67,7 +67,7 @@ services = [
             "phone": "{cc}{target}"
         },
         "identifier": "code_length"
-    },
+    }, # Youla +
     {
         "name": "ivi.ru",
         "method": "POST",
@@ -76,7 +76,7 @@ services = [
             "phone": "+{cc}{target}"
         },
         "identifier": "true"
-    },
+    }, # IVI +
     {
         "name": "delitime.ru",
         "method": "POST",
@@ -86,14 +86,14 @@ services = [
             "SignupForm[device_type]": "3"
         },
         "identifier": "true"
-    },
+    }, # Delitime +
     {
         "name": "icq.com",
         "method": "POST",
         "url": "https://www.icq.com/smsreg/requestPhoneValidation.php'",
         "params": {'msisdn': '{cc}{target}', "locale": 'en', 'countryCode': 'ru','version': '1', "k": "ic1rtwz1s1Hj1O0r", "r": "46763"},
         "identifier": "200"
-    },
+    }, # ICQ +
     {
         'name': 'grab',
         'method': "POST",
@@ -107,7 +107,7 @@ services = [
                 'deviceToken': '*'
             },
         "identifier": "200"
-    },
+    }, # Grab -
 {
         'name': 'BelcaCar',
         'method': "POST",
@@ -117,7 +117,7 @@ services = [
                 'phone': '+{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # BelcaCar -
 {
         'name': 'Sunlight',
         'method': "POST",
@@ -127,7 +127,7 @@ services = [
                 'phone': '{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # Sunlight +
 {
         'name': 'Cloud mail.ru',
         'method': "POST",
@@ -137,8 +137,7 @@ services = [
                 'phone': '{cc}{target}',
             },
         "identifier": "200"
-    },
-
+    }, # Cloud Mail.ru +
 {
         'name': 'KFC',
         'method': "POST",
@@ -148,7 +147,7 @@ services = [
                 'phone': '+{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # KFC -
 {
         'name': 'UTAIR',
         'method': "POST",
@@ -158,7 +157,7 @@ services = [
                 'phone': '{ccc}{target}',
             },
         "identifier": "200"
-    },
+    }, # UTAIR -
 {
         'name': 'Tinder',
         'method': "POST",
@@ -168,7 +167,7 @@ services = [
                 'phone_number': '{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # Tinder +-
 {
         'name': 'OK.ru',
         'method': "POST",
@@ -178,7 +177,7 @@ services = [
                 'st.r.phone': '+{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # Ok.ru +
 {
         'name': 'Karusel',
         'method': "POST",
@@ -188,7 +187,7 @@ services = [
                 'phone': '{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # Karusel -
 {
         'name': 'Yandex Eda',
         'method': "POST",
@@ -198,7 +197,7 @@ services = [
                 'phone_number': '+{cc}{target}',
             },
         "identifier": "200"
-    },
+    }, # Yandex.Eda +
     {
         'name': 'Tinkoff',
         'method': 'POST',
@@ -208,7 +207,7 @@ services = [
             'phone': '+{cc}{target}'
         },
         "identifier": "200"
-    },
+    }, # Tinkoff +-
 {
         'name': 'Rabota.ru',
         'method': 'POST',
@@ -218,7 +217,7 @@ services = [
             'credential': '{cc}{target}'
         },
         "identifier": "200"
-    },
+    }, # Rabota.ru -
 {
         'name': 'Citilink',
         'method': 'POST',
@@ -226,7 +225,7 @@ services = [
         'params':
         {},
         "identifier": "200"
-    },
+    }, # Citilink +
 {
         'name': 'Beltelecom',
         'method': 'POST',
@@ -234,7 +233,7 @@ services = [
         'params':
         {'phone': '{cc}{target}'},
         "identifier": "ok"
-    },
+    }, # Beltelecome +
 {
         'name': 'Lenta',
         'method': 'POST',
@@ -242,7 +241,7 @@ services = [
         'json':
         {'phone': '+{cc}{target}'},
         "identifier": "phoneNumber"
-    },
+    }, # Lenta +
 {
         'name': 'Deliviry',
         'method': 'POST',
@@ -250,5 +249,5 @@ services = [
         'params':
         {'phone': '{cc}{target}'},
         "identifier": "200"
-    }
+    } # Delivery -
 ]

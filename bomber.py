@@ -37,7 +37,7 @@ lv = colored('<3', 'red')
 vv = colored('@v533', 'magenta')
 aa = colored('Ar1na', 'magenta')
 print('Made with ' + lv + ' by ' + vv + "\n\nSpecial for " + aa)
-print('\nVersion: 0.6.0')
+print('\nVersion: 0.6.1')
 # functions
 email = '@mail.ru'
 for x in range(12):
@@ -469,11 +469,10 @@ def smsBomber():
 def update():
     print('\n' + colored('Updating...', 'magenta') + '\n')
     print('Removing previous version...')
-    os.system('cd')
+    os.chdir(os.path.dirname(os.getcwd()))
     os.system('rm -rf S1MpL3B00Mb3r')
     print('Install new version from github...')
     os.system('git clone https://github.com/Vovan533/S1MpL3B00Mb3r.git')
-    os.system('cd S1MpL3B00Mb3r')
     print('\n' + colored(':D', 'yellow') + '\nUpdate finished, restart programm')
     exit()
 

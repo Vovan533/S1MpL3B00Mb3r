@@ -37,7 +37,7 @@ lv = colored('<3', 'red')
 vv = colored('@v533', 'magenta')
 aa = colored('Ar1na', 'magenta')
 print('Made with ' + lv + ' by ' + vv + "\n\nSpecial for " + aa)
-print('\nVersion: 0.6.2')
+print('\nVersion: 0.6.5')
 # functions
 email = '@mail.ru'
 for x in range(12):

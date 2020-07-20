@@ -38,7 +38,7 @@ lv = colored('<3', 'red')
 vv = colored('@v533', 'magenta')
 aa = colored('Ar1na', 'magenta')
 print('Made with ' + lv + ' by ' + vv + "\n\nSpecial for " + aa)
-print('\nVersion: 0.7.0')
+print('\nVersion: 0.7.3')
 # functions
 email = '@mail.ru'
 for x in range(12):
@@ -81,10 +81,11 @@ def smsBomber():
     if number[0] == '+':
         number = number[1:]
     if number[0] == '8':
-        number = '7' + number[1:]
+        number = number[1:]
     if len(number) != 10:
         print('\n' + colored(':/', 'red') + '\nInvalid phone number (Example: XXXXXXXXXX)')
         return ''
+
 
     count = input('\n' + colored('Input number of SMS to spam', 'cyan') + colored(' >> ', 'grey'))
     try:
